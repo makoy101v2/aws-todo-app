@@ -1,0 +1,240 @@
+:root {
+  --container-max: 1400px;
+  --accent: #1976d2;
+  --accent-2: #60a5fa;
+  --bg: #f6f9ff;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --glass: rgba(255, 255, 255, 0.6);
+  --delete: #e63946;
+  --edit: #f4a261;
+}
+
+/* Submenu (dropdown) */
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  background: white;
+  border-radius: 10px;
+  padding: 0.35rem;
+  box-shadow: 0 8px 26px rgba(2, 6, 23, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  z-index: 40;
+}
+
+.submenuItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submenuItem:hover,
+.submenuItem:focus {
+  background: linear-gradient(
+    90deg,
+    rgba(25, 118, 210, 0.06),
+    rgba(96, 165, 250, 0.02)
+  );
+  outline: none;
+}
+
+/* Show submenu when parent has .open class */
+.open > .submenu {
+  display: block;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: linear-gradient(
+    90deg,
+    rgba(25, 118, 210, 0.12),
+    rgba(96, 165, 250, 0.06)
+  );
+  border: 1px solid rgba(25, 118, 210, 0.08);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+  margin-bottom: 1rem;
+}
+
+/* CTA */
+.heroActions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(25, 118, 210, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(25, 118, 210, 0.12);
+  box-shadow: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.taskstodo {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1rem 1rem 1rem;
+  min-height: 220px;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.04);
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.topRight {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  padding: 2rem;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(96, 165, 250, 0.02), transparent);
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.taskItem {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.taskItem h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.taskItem p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Delete Button */
+.deleteBtn {
+  background: var(--delete);
+  color: white;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(25, 118, 210, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+  float:right
+}
+
+.editBtn {
+  margin-left: 10px;
+  background: var(--edit);
+  color: white;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(25, 118, 210, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+  float:right
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .heroActions {
+    align-self: stretch;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menuList {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding: 1rem;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .brand {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+  }
+  .title {
+    font-size: 1.05rem;
+  }
+  .submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 0.25rem 0;
+    background: transparent;
+  }
+  .submenuItem {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 6px;
+  }
+}

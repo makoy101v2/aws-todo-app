@@ -1,0 +1,37 @@
+/* Top menu */
+.topmenu {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.menuList {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuButton {
+  background: transparent;
+  border: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease, transform 0.12s;
+}
+
+.menuButton:hover,
+.menuButton:focus {
+  background: rgba(25, 118, 210, 0.08);
+  outline: none;
+  transform: translateY(-1px);
+}

@@ -1,0 +1,151 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px; /* Add padding for mobile */
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 550px; /* Use max-width instead of min-width */
+  min-width: 300px; /* Minimum width for very small screens */
+  max-height: 90vh; /* Prevent modal from being too tall */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+  font-size: 16px; /* Prevent zoom on iOS */
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap; /* Allow buttons to wrap on very small screens */
+}
+
+.primary {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 80px;
+  font-size: 14px;
+}
+
+.cancelBtn {
+  background: #ee2f2f;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 80px;
+  font-size: 14px;
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .modal {
+    padding: 20px;
+    margin: 16px;
+  }
+
+  .header h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .overlay {
+    padding: 8px;
+    align-items: flex-start; /* Align to top for better mobile UX */
+    padding-top: 20vh; /* Add some top spacing */
+  }
+
+  .modal {
+    padding: 16px;
+    min-width: unset;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .header h2 {
+    font-size: 1.125rem;
+  }
+
+  .input {
+    padding: 14px 12px; /* Slightly larger touch target */
+    margin-bottom: 12px;
+  }
+
+  .actions {
+    flex-direction: column-reverse; /* Stack buttons vertically */
+    gap: 12px;
+  }
+
+  .primary,
+  .cancelBtn {
+    width: 100%; /* Full-width buttons on mobile */
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .modal {
+    padding: 12px;
+  }
+
+  .header h2 {
+    font-size: 1rem;
+  }
+}
